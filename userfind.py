@@ -75,7 +75,7 @@ def check(site: dict, username: str, timeout: float) -> dict:
         elif exc.code in (403, 429):
             result["status"] = "blocked"
         return result
-    except Exception:  # noqa: BLE001 - network issues -> unknown
+    except Exception:  # noqa: BLE001
         return result
 
     if site["mode"] == "string":
